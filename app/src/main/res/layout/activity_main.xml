@@ -56,14 +56,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SEND Progress Notification"
-        app:layout_constraintBottom_toTopOf="@+id/headsUpStyle"
+        app:layout_constraintBottom_toTopOf="@+id/customViewStyle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mediaStyle" />
 
     <Button
-        android:id="@+id/headsUpStyle"
+        android:id="@+id/customViewStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Custom View Notification"

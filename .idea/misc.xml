@@ -6,6 +6,8 @@
         <entry key="app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33446858723958334" />
+        <entry key="app/src/main/res/layout/collapsed_view.xml" value="0.30885416666666665" />
+        <entry key="app/src/main/res/layout/custom_view.xml" value="0.31393737792968746" />
       </map>
     </option>
   </component>
@@ -14,5 +16,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.31393737792968746" />
+      </ProjectState>
+    </option>
   </component>
 </project>

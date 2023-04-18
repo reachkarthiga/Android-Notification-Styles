@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
             getString(R.string.channel_name),
             NotificationManager.IMPORTANCE_DEFAULT
         )
+
         notificationChannel.setShowBadge(true)
 
         notificationManager?.createNotificationChannel(notificationChannel)
@@ -69,6 +70,11 @@ class MainActivity : AppCompatActivity() {
         bigPictureStyle.setOnClickListener {
             notificationManager?.sendNotificationBigPictureStyle(this)
         }
+
+        customViewStyle.setOnClickListener {
+            notificationManager?.sendNotificationCustomViewStyle(this)
+        }
+
 
     }
 

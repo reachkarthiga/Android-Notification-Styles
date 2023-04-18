@@ -12,6 +12,7 @@ import android.net.Uri
 import android.os.SystemClock
 import android.support.v4.media.session.MediaSessionCompat
 import android.support.v4.media.session.PlaybackStateCompat
+import android.widget.RemoteViews
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.core.app.Person
@@ -92,10 +93,7 @@ fun NotificationManager.sendNotificationMessageStyle(context: Context) {
 
 }
 
-fun NotificationManager.sendNotificationMediaStyle(
-    context: Context,
-    mediaSession: MediaSessionCompat
-) {
+fun NotificationManager.sendNotificationMediaStyle(context: Context, mediaSession: MediaSessionCompat) {
 
     val builder =
         NotificationCompat.Builder(context, context.resources.getString(R.string.channel_id))
@@ -212,6 +210,34 @@ fun NotificationManager.sendNotificationBigPictureStyle(context: Context) {
             .setSmallIcon(R.drawable.ic_baseline_notifications_24)
             .setColor(ContextCompat.getColor(context, R.color.teal_200))
             .setStyle(bigPictureStyle)
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+    }
+
+    notify(NOTIFICATION_ID, builder.build())
+
+
+}
+
+fun NotificationManager.sendNotificationCustomViewStyle(context: Context) {
+
+    val builder =
+        NotificationCompat.Builder(context, context.resources.getString(R.string.channel_id))
+
+    val remoteView = RemoteViews(context.packageName, R.layout.custom_view)
+
+    val collapsedView = RemoteViews(context.packageName, R.layout.collapsed_view)
+
+    val customViewStyle = NotificationCompat.DecoratedCustomViewStyle()
+
+    builder.apply {
+
+        setAutoCancel(true)
+            .setContentTitle("Mobile Sales").setContentText("Amazon Mobile Sales is now live!!")
+            .setSmallIcon(R.drawable.ic_baseline_notifications_24)
+            .setColor(ContextCompat.getColor(context, R.color.teal_200))
+            .setCustomContentView(collapsedView)
+            .setCustomBigContentView(remoteView)
+            .setStyle(customViewStyle)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
     }
 
