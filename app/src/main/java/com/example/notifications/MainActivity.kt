@@ -32,6 +32,8 @@ class MainActivity : AppCompatActivity() {
         lateinit var mediaSession: MediaSessionCompat
     }
 
+    private lateinit var mediaPlayer:MediaPlayer
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -90,7 +92,7 @@ class MainActivity : AppCompatActivity() {
 
         mediaSession.setPlaybackState(state)
 
-        val mediaPlayer = MediaPlayer.create(context, R.raw.song)
+        mediaPlayer = MediaPlayer.create(context, R.raw.song)
 
         val callBack = object : MediaSessionCompat.Callback() {
 
@@ -192,6 +194,12 @@ class MainActivity : AppCompatActivity() {
             MediaButtonReceiver.handleIntent(mediaSession, intent)
         }
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mediaSession.release()
+        mediaPlayer.release()
     }
 
 }
